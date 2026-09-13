@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: face-lock-server
+    env: docker
+    plan: free
+    envVars:
+      - key: ESP32_IP
+        sync: false        # set to your ESP32's IP or tunnel hostname in the Render dashboard
+      - key: GRANT_KEY
+        sync: false        # must match GRANT_KEY in the .ino sketch
+    # Optional: add a persistent disk so registered faces survive redeploys.
+    # Uncomment and set DATASET_DIR=/data as an env var above to use it.
+    # disk:
+    #   name: face-data
+    #   mountPath: /data
+    #   sizeGB: 1
