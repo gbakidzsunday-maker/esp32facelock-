@@ -1,4 +1,0 @@
-flask
-opencv-contrib-python
-requests
-numpy
