@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: face-lock-backend
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: API_KEY
+        sync: false        # set this in the Render dashboard, don't commit it
+      - key: MATCH_THRESHOLD
+        value: "70"
+    # Optional but recommended if you don't want to re-register faces after
+    # every redeploy/restart - requires a paid plan:
+    # disk:
+    #   name: face-dataset
+    #   mountPath: /app/dataset
+    #   sizeGB: 1
