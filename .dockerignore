@@ -1,0 +1,6 @@
+dataset/
+__pycache__/
+*.pyc
+.git
+.gitignore
+README.md
